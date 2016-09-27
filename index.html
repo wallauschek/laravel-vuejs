@@ -16,7 +16,7 @@
 </head>
 <body id="app">
 <h1>{{ title }}</h1>
-<h3 v-bind:class="{'grayLabel': status===false, 'pago': status === 0, 'naopago': status > 0 }">{{ status | geralStatusLabel }}</h3>
+<h3 v-bind:class="{'grayLabel': status===false, 'pago': status === 0, 'naopago': status > 0 }">{{ status | generalStatusLabel }}</h3>
 <nav>
 	<ul>
 		<li v-for="o in menus"><a href="#" @click.prevent="showView(o.id)">{{o.name}}</a></li>
@@ -65,6 +65,8 @@
 		</select><br>
 		<label>Valor</label>
 		<input type="text" name="value" v-model="bill.value"><br>
+		<label>Pago?</label>
+		<input type="checkbox" v-model="bill.done"> 
 		<input type="submit" value="enviar" />
 	</form>
 </div>

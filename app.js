@@ -6,7 +6,7 @@ Vue.filter('doneLabel', function(done){
 	}
 });
 
-Vue.filter('geralStatusLabel', function(status){
+Vue.filter('generalStatusLabel', function(status){
 	if(status===false){
 		return "Nenhuma conta cadastrada";
 	}else{
@@ -55,7 +55,7 @@ var app = new Vue({
 	},
 	computed: {
 		status: function(){
-			if(this.bills!=''){
+			if(this.bills.length){
 				var count = 0;
 				for(var i in this.bills){
 					if(!this.bills[i].done){
@@ -102,5 +102,3 @@ var app = new Vue({
 		}
 	}
 });
-
-
